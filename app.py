@@ -7,7 +7,7 @@ from model import QueryRequestValue
 
 
 
-app = Flask(__name__)
+app:Flask = Flask(__name__)
 
 
 
@@ -24,6 +24,7 @@ def perform_query():
     result = None
     for query in reque['queries']:
         result = build_query(
+            name= query['name'],
             cmd = query['cmd'],
             param = query['value'],
             data = result,

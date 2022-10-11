@@ -1,9 +1,12 @@
+from typing import List
+
 from marshmallow import fields, validates_schema, Schema,ValidationError
 
 from global_path import VALID_CMD_PARAMS
 
 
 class RequestParam(Schema):
+    name = fields.Str()
     cmd = fields.Str(required=True)
     value = fields.Str(required=True)
 
