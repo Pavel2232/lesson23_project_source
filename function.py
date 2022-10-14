@@ -1,5 +1,5 @@
 from typing import Optional
-
+import re
 
 def filter_query(param: str,data)->list:
     return list(filter(lambda x: param in x, data))
@@ -19,5 +19,5 @@ def limit_query(param:str,data)->list:
     limit: int = int(param)
     return list(data)[:limit]
 
-def regular_func(data:str,*args,**kwargs)->str:
-    return data
+def regular_func(param:str,data:str)->str:
+    return re.search(param:str,data:str)
