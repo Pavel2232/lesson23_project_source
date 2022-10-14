@@ -20,4 +20,5 @@ def limit_query(param:str,data)->list:
     return list(data)[:limit]
 
 def regular_func(param:str,data:str)->str:
-    return re.search(param:str,data:str)
+    pattern = re.compile(param)
+    return list(filter(lambda x: re.search(pattern,x), data))
